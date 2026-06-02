@@ -34,9 +34,9 @@ const PRESET_COMMANDS = [
   },
   {
     cmd: "cat curriculo.pdf",
-    label: "Baixar currículo",
+    label: "Abrir currículo",
     color: "#af7ac5",
-    action: "/curriculo.pdf",
+    action: "/curriculo",
   },
   {
     cmd: "open linkedin",

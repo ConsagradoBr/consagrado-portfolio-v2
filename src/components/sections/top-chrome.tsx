@@ -223,14 +223,14 @@ export function TopChrome() {
 
           {/* CV button */}
           <motion.a
-            href="/curriculo.pdf"
+            href="/curriculo"
             target="_blank"
             className="ml-1 md:ml-2 flex items-center h-7 md:h-8 px-2 md:px-4 rounded-[6px] font-mono text-[10px] md:text-[11px] font-semibold tracking-[1.2px] text-white transition-all duration-200"
             style={{ background: "rgba(93, 173, 226, 0.2)" }}
             whileHover={{ background: "rgba(93, 173, 226, 0.35)" }}
             whileTap={{ scale: 0.97 }}
           >
-            <span className="hidden md:inline">cat currículo.pdf</span>
+            <span className="hidden md:inline">open currículo</span>
             <span className="md:hidden">CV</span>
           </motion.a>
         </div>
