@@ -204,7 +204,11 @@ export function ContactSection() {
     // External action commands
     const preset = PRESET_COMMANDS.find((p) => p.cmd === fullCmd);
     if (preset) {
-      if (preset.action.startsWith("http") || preset.action.startsWith("mailto")) {
+      if (
+        preset.action.startsWith("http") ||
+        preset.action.startsWith("mailto") ||
+        preset.action.startsWith("/")
+      ) {
         window.open(preset.action, "_blank");
       }
       const outputs: Record<string, string> = {
