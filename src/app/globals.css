@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ─── Design Tokens ─── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Base */
+  --color-bg-canvas: #050a12;
+  --color-bg-header: #03070d;
+  --color-bg-surface: #0a1021;
+  --color-bg-window: #0b100d;
+  --color-stroke-subtle: #193b59;
+  --color-stroke-glass: rgba(255, 255, 255, 0.03);
+
+  /* Text */
+  --color-text-primary: #edf7ff;
+  --color-text-secondary: #9fb0c8;
+  --color-text-muted: #61708a;
+
+  /* Accents */
+  --color-accent-blue: #1788d1;
+  --color-accent-purple: #8b5cf6;
+  --color-accent-green: #20d991;
+  --color-accent-steel: #61708a;
+  --color-accent-yellow: #f2d675;
+  --color-accent-red: #ff6b6b;
+  --color-hero-blue: #22a6f2;
+
+  /* Surfaces */
+  --radius-card: 16px;
+  --radius-window: 16px;
+  --radius-button: 9px;
+  --radius-pill: 999px;
+
+  /* Spacing */
+  --spacing-grid: 72px;
+  --spacing-gutter: 24px;
+  --spacing-section-x: 58px;
+  --spacing-section-y: 134px;
+
+  /* Fonts (loaded via next/font/google) */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
+
+  /* Motion */
+  --ease-premium: cubic-bezier(0.12, 0.23, 0.15, 0.99);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ─── Base ─── */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg-canvas);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  cursor: default;
+}
+
+/* ─── Adaptive cursor areas ─── */
+.terminal-area {
+  cursor: text;
+}
+.desktop-area {
+  cursor: default;
+}
+.clickable-command {
+  cursor: pointer;
+}
+
+/* ─── Scanlines (Home CRT mode) ─── */
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.04) 3px,
+    rgba(0, 0, 0, 0.04) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── Grid overlay ─── */
+.grid-overlay {
+  background-image:
+    linear-gradient(to right, rgba(18, 48, 74, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(18, 48, 74, 0.25) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+}
+
+/* ─── Glass bar ─── */
+.glass-bar {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    transparent 100%
+  );
+  backdrop-filter: blur(2px);
+}
+
+/* ─── Custom scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-stroke-subtle);
+  border-radius: 3px;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: var(--color-accent-blue);
+  color: var(--color-bg-canvas);
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
