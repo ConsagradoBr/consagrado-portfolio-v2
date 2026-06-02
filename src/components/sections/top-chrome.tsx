@@ -36,108 +36,42 @@ const SYS_INFO = [
   "Status:  available",
 ];
 
-// ─── Killua Zoldyck ASCII art ───
-const KILLUA_OPEN = [
-  "      ╔══════════════╗      ",
-  "   ╔══╝   ╔══════╗   ╚══╗   ",
-  "  ╔╝     ╔╝ ▄▄▄▄ ╚╗     ╚╗  ",
-  " ╔╝  ╔══╗╚╗ ████ ╔╝╔══╗  ╚╗ ",
-  " ║  ╔╝  ╚╗╚╗ ██ ╔╝╔╝  ╚╗  ║ ",
-  " ║  ║ ██ ║ ╚╗  ╔╝ ║ ██ ║  ║ ",
-  " ║  ║ ██ ║  ╚══╝  ║ ██ ║  ║ ",
-  " ║  ╚╗    ╚══════╝╔╝    ╔╝  ║ ",
-  " ║   ╚╗  ╔══════╗ ╔╝   ╔╝   ║ ",
-  " ║    ╚╗ ╚══════╝ ╔╝   ╔╝    ║ ",
-  " ║     ╚══════════╝    ╔╝     ║ ",
-  " ║   ╔══════════════╗  ╔╝     ║ ",
-  " ║   ║  ⚡      ⚡   ║  ╔╝     ║ ",
-  " ║   ╚══════════════╝ ╔╝      ║ ",
-  " ╚╗                  ╔╝      ╔╝ ",
-  "  ╚╗                ╔╝       ╔╝  ",
-  "   ╚╗              ╔╝       ╔╝   ",
-  "    ╚══════════════╝        ╔╝    ",
+// ─── DNA ASCII art (emojicombos.com) ───
+const DNA_ART = [
+  "      ⠀⠀⢰⠉⢷⠒⠒⠒⠒⠒⠒⠒⠒⣺⠉⡆⠀⠀",
+  "      ⠀⢧⠘⢦⣀⣀⣀⣀⣀⣀⡰⠃⡸⠁⠀⠀",
+  "      ⠀⠀⠳⣄⠑⠦⡀⢀⡠⠊⣠⠞⠁⠀⠀⠀",
+  "      ⠀⠀⠀⠀⢑⡦⣈⠓⢤⡊⠀⠀⠀⠀⠀⠀",
+  "      ⠀⠀⢀⠔⢁⡤⠚⠑⠤⡈⠣⡀⠀⠀⠀⠀",
+  "      ⠀⢠⠏⡰⠯⠤⠤⠤⠤⠼⢆⠘⡄⠀⠀⠀",
+  "      ⠀⠸⠀⣇⣀⣀⣀⣀⣀⣀⣘⡄⢱⠀⠀⠀",
+  "      ⠀⢰⠀⡇⠀⠀⠀⠀⠀⠀⢰⠁⡌⠀⠀⠀",
+  "      ⠀⠈⢧⠘⢖⡒⠒⠒⠒⡲⠃⡰⠁⠀⠀⠀",
+  "      ⠀⠀⠀⠳⢄⡙⣢⠔⠊⣠⠞⠁⠀⠀⠀⠀",
+  "      ⠀⠀⠀⢀⠴⠋⣡⢔⡛⠢⣀⠀⠀⠀⠀⠀",
+  "      ⠀⢀⡔⢁⡴⠊⠀⠀⠙⢢⡈⠣⡀⠀⠀⠀",
+  "      ⠀⡎⢠⠋⠉⠉⠉⠉⠉⠉⠙⡄⢱⡀⠀⠀",
+  "      ⠀⢇⡼⠒⠒⠒⠒⠒⠒⠒⠒⢣⣠⠃⠀⠀",
+  "      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+  "      ⠰⠦⠴⠤⠤⠠⠴⠠⠤⠄⠀⠂⠶⠶⠶⠦⠄⠰",
 ];
 
-const KILLUA_CLOSED = [
-  "      ╔══════════════╗      ",
-  "   ╔══╝   ╔══════╗   ╚══╗   ",
-  "  ╔╝     ╔╝ ▄▄▄▄ ╚╗     ╚╗  ",
-  " ╔╝  ╔══╗╚╗ ████ ╔╝╔══╗  ╚╗ ",
-  " ║  ╔╝  ╚╗╚╗ ██ ╔╝╔╝  ╚╗  ║ ",
-  " ║  ║    ║ ╚╗  ╔╝ ║    ║  ║ ",
-  " ║  ║    ║  ╚══╝  ║    ║  ║ ",
-  " ║  ╚╗    ╚══════╝╔╝    ╔╝  ║ ",
-  " ║   ╚╗  ╔══════╗ ╔╝   ╔╝   ║ ",
-  " ║    ╚╗ ╚══════╝ ╔╝   ╔╝    ║ ",
-  " ║     ╚══════════╝    ╔╝     ║ ",
-  " ║   ╔══════════════╗  ╔╝     ║ ",
-  " ║   ║  ⚡      ⚡   ║  ╔╝     ║ ",
-  " ║   ╚══════════════╝ ╔╝      ║ ",
-  " ╚╗                  ╔╝      ╔╝ ",
-  "  ╚╗                ╔╝       ╔╝  ",
-  "   ╚╗              ╔╝       ╔╝   ",
-  "    ╚══════════════╝        ╔╝    ",
-];
-
-const KILLUA_SPARK = [
-  "      ╔══════════════╗      ",
-  "   ╔══╝   ╔══════╗   ╚══╗   ",
-  "  ╔╝  ╔══╗╔╝ ▄▄ ╚╗╔══╗  ╚╗  ",
-  " ╔╝  ║██║╚╗ ████ ╔╝║██║  ╚╗ ",
-  " ║  ╔╝  ╚╗╚╗ ██ ╔╝╔╝  ╚╗  ║ ",
-  " ║  ║ ██ ║ ╚╗  ╔╝ ║ ██ ║  ║ ",
-  " ║  ║ ██ ║  ╚══╝  ║ ██ ║  ║ ",
-  " ║  ╚╗    ╚══════╝╔╝    ╔╝  ║ ",
-  " ║   ╚╗  ╔══════╗ ╔╝   ╔╝   ║ ",
-  " ║    ╚╗ ╚══════╝ ╔╝   ╔╝    ║ ",
-  " ║     ╚══════════╝ ╔══╗ ╔╝   ║ ",
-  " ║   ╔══════════════╗ ╚╗╔╝    ║ ",
-  " ║   ║  ⚡══════⚡  ║  ╚╝     ║ ",
-  " ║   ╚══════════════╝         ║ ",
-  " ╚╗                          ╔╝ ",
-  "  ╚╗                        ╔╝  ",
-  "   ╚╗                      ╔╝   ",
-  "    ╚══════════════════════╝    ",
-];
-
-function useKillua() {
-  const [frame, setFrame] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFrame((prev) => (prev + 1) % 3);
-    }, 800);
-    return () => clearInterval(interval);
-  }, []);
-
-  return KILLUA_FRAMES[frame];
-}
-
-const KILLUA_FRAMES = [KILLUA_OPEN, KILLUA_CLOSED, KILLUA_SPARK];
-
-function TerminalKilluaScene() {
-  const art = useKillua();
-
+function TerminalDnaScene() {
   return (
     <pre
       className="font-mono text-[9px] leading-[1.25]"
       style={{ color: "rgba(255,255,255,0.15)" }}
     >
-      {art.map((line, ri) => (
+      {DNA_ART.map((line, ri) => (
         <div key={ri} className="flex">
           {line.split("").map((cell, ci) => {
-            // Color specific characters
+            // Color braille dots for DNA helix effect
             let color: string | undefined;
-            if (cell === "⚡") color = "#f7dc6f";
-            else if (cell === "█") color = "#5dade2";
-            else if (cell === "●" || cell === "◉") color = "#5dade2";
-            else if (cell === "▄" || cell === "▀") color = "rgba(255,255,255,0.2)";
-            else if ("╔╗╚╝═║".includes(cell)) color = "rgba(255,255,255,0.1)";
+            if ("⣿⠿⠷⠾⣶⣤⣀⡀⠰⠦⠴⠤⠠⠴⠶⠒⠲⡆⢰⣺⠉⡸⡠⠊⣠⣈⢤⡊⡤⠚⠑⣌⠢⡀⡘⡇⡌⡒⡲⡙⣢⡔⢡⡴⢊⠑⢢⡈⡎⢠⠋⡄⢱⡼⢣⣠⣖⣦⣄⣼⣶⣷⣿⣧⣤⣀⣉⣓⣒⣲⣴⣶⣾⢿⡿⣿⢷⣿⣽⣯⣟⣻⣏⣹⣺⡇⢧⡘⢦⡃⡸⢰⢧⡀⢱⢸⣇⢸⡇⢸⡇⡇⣧⡇⣿⠃⢧".includes(cell)) {
+              color = "#5dade2";
+            }
             return (
-              <span
-                key={ci}
-                style={{ color, textShadow: cell === "⚡" ? "0 0 4px #f7dc6f" : undefined }}
-              >
+              <span key={ci} style={{ color }}>
                 {cell}
               </span>
             );
@@ -346,7 +280,7 @@ export function TopChrome() {
               >
                 {/* Pac-Man + Neofetch scene */}
                 <div className="relative">
-                  <TerminalKilluaScene />
+                  <TerminalDnaScene />
 
                   {/* Overlay logo + sysinfo on top of the grid */}
                   <div
