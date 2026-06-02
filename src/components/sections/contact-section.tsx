@@ -248,7 +248,7 @@ export function ContactSection() {
     <section
       id="contact"
       ref={contactRef}
-      className="relative min-h-screen pt-[86px] overflow-hidden"
+      className="relative min-h-screen pt-[86px] pb-20"
     >
       {/* Grid + minimal green glow */}
       <div className="absolute inset-0 grid-overlay" />
